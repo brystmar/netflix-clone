@@ -1,23 +1,26 @@
 import React from "react"
-import {BrowserRouter as Router, Switch} from "react-router-dom";
-import {Route} from "react-router-dom";
+import { BrowserRouter as Router, Switch } from "react-router-dom";
+import { Route } from "react-router-dom";
 
 
 function App() {
     return (
         <Router>
             <Switch>
+                <Route path="/login">
+                    <p>Placeholder: Login page</p>
+                </Route>
+
+                <Route path="/register">
+                    <p>Placeholder: Registration page</p>
+                </Route>
+
                 <Route path="/browse">
-                    <p>I will be the sign in page</p>
+                    <p>Placeholder: Browse content</p>
                 </Route>
-                <Route path="/signin">
-                    <p>I will be the sign up page</p>
-                </Route>
-                <Route path="/browse">
-                    <p>I will be the browse page</p>
-                </Route>
+
                 <Route path="/">
-                    <p>I am going to be a cloned Netflix application</p>
+                    <p>Placeholder: Homepage</p>
                 </Route>
             </Switch>
         </Router>
