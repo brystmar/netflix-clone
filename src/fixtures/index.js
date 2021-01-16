@@ -1,4 +1,4 @@
-const faqs = [
+const faqData = [
     {
         "id":     1,
         "header": "What is Netflix?",
@@ -26,11 +26,11 @@ const faqs = [
     }
 ]
 
-const jumbo = [
+const jumboData = [
     {
         "id":        1,
         "title":     "Enjoy on your TV.",
-        "subTitle":  "Watch on smart TVs, PlayStation, Xbox, Chromecast, Apple TV, Blu-ray players and more.",
+        "subtitle":  "Watch on smart TVs, PlayStation, Xbox, Chromecast, Apple TV, Blu-ray players and more.",
         "image":     "/images/misc/home-tv.jpg",
         "alt":       "Tiger King on Netflix",
         "direction": "row"
@@ -53,4 +53,4 @@ const jumbo = [
     }
 ]
 
-export { faqs, jumbo }
+export { faqData, jumboData }
