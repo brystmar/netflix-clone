@@ -14,13 +14,32 @@ export const Inner = styled.div`
     }
 `
 
+export const Pane = styled.div`
+    width: 50%;
+    
+    @media (max-width: 1000px) {
+        width: 100%;
+        padding: 0 45px;
+        text-align: center;
+    }
+`
+
 export const Item = styled.div`
     display: flex;
-    
+    border-bottom: 8px solid #222;
+    padding: 50px 5%;
+    color: white;
+    overflow: hidden;
 `
 
 export const Container = styled.section`
+    background-color: black;
     
+    @media (max-width: 1000px) {
+        ${Item}:last-of-type h2 {
+            margin-bottom: 50px;
+        }
+    }
 `
 
 export const Title = styled.h1`
@@ -33,7 +52,7 @@ export const Title = styled.h1`
     }
 `
 
-export const SubTitle = styled.h1`
+export const Subtitle = styled.h2`
     font-size: 1.625rem;
     font-weight: normal;
     line-height: normal;
