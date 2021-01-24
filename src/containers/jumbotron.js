@@ -5,8 +5,8 @@ import { jumboData } from "../fixtures"
 export default function JumbotronContainer() {
     return (
         <Jumbotron.Container>
-            {jumboData.map((item, index) =>
-                <Jumbotron key={index} direction={item.direction}>
+            {jumboData.map((item) =>
+                <Jumbotron key={item.id} direction={item.direction}>
                     <Jumbotron.Pane>
                         <Jumbotron.Title>{item.title}</Jumbotron.Title>
                         <Jumbotron.Subtitle>{item.subtitle}</Jumbotron.Subtitle>
