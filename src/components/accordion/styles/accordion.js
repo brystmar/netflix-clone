@@ -6,11 +6,12 @@ export const Container = styled.div`
 `
 
 export const Frame = styled.div`
-  margin-bottom: 2.5em;
+  margin-bottom: 1em;
 `
 
 export const Inner = styled.div`
-  max-width: 815px;
+  width: 100%;
+  max-width: 820px;
   display: flex;
   flex-direction: column;
   margin: auto;
@@ -22,7 +23,7 @@ export const Item = styled.div`
   margin-bottom: 0.8em;
 
   &:first-of-type {
-    margin-top: 3em;
+    margin-top: 2.5em;
   }
 `
 
@@ -43,6 +44,7 @@ export const Title = styled.h1`
 export const Header = styled.div`
   font-size: 1.85rem;
   font-weight: normal;
+  width: 100%;
   background: #303030;
   display: flex;
   align-items: center;
@@ -51,18 +53,31 @@ export const Header = styled.div`
   padding: 0.8em 1.2em 0.8em 1.2em;
   user-select: none;
   cursor: pointer;
+
+  img {
+    filter: brightness(0) invert(1);
+    width: 24px;
+
+    @media (max-width: 600px) {
+      width: 16px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    font-size: 1rem;
+  }
 `
 
 export const Body = styled.div`
   font-size: 1.6rem;
   font-weight: normal;
   line-height: normal;
+  overflow: hidden;
   background: #303030;
   align-items: center;
   padding: 0.8em 1.2em 0.8em 1.2em;
   user-select: none;
-  transition: max-height 250ms cubic-bezier(0.5, 0, 0.1, 1);
-
+  
   @media (max-width: 600px) {
     font-size: 1rem;
     line-height: 1.35em;
