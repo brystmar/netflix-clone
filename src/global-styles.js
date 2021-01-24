@@ -18,8 +18,4 @@ export const GlobalStyles = createGlobalStyle`
     max-width: 1200px;
     margin: 0 auto;
   }
-  
-  .collapse {
-    height: 0;
-  }
 `

@@ -1,5 +1,5 @@
-import React, { useState, useContext, createContext, useRef } from "react"
-import { Container, Inner, Title, Header, Body, Item, Frame } from "./styles/accordion";
+import React, { useState, useContext, createContext } from "react"
+import { Container, Inner, Title, Header, Body, Item, Frame } from "./styles/accordion"
 
 export const ToggleContext = createContext(undefined, undefined)
 
@@ -14,10 +14,10 @@ Accordion.Frame = function AccordionFrame({ children, ...props }) {
 }
 
 Accordion.Item = function AccordionItem({ children, ...props }) {
-    const [ toggleShow, setToggleShow ] = useState(false)
+    const [ isCollapsed, setIsCollapsed ] = useState(true)
 
     return (
-        <ToggleContext.Provider value={{ toggleShow, setToggleShow }}>
+        <ToggleContext.Provider value={{ isCollapsed, setIsCollapsed }}>
             <Item {...props}>{children}</Item>
         </ToggleContext.Provider>
     )
@@ -28,27 +28,25 @@ Accordion.Title = function AccordionTitle({ children, ...props }) {
 }
 
 Accordion.Header = function AccordionHeader({ children, ...props }) {
-    const { toggleShow, setToggleShow } = useContext(ToggleContext)
+    const { isCollapsed, setIsCollapsed } = useContext(ToggleContext)
     return (
-        <Header onClick={() => setToggleShow(!toggleShow)} {...props}>
+        <Header onClick={() => setIsCollapsed(!isCollapsed)} {...props}>
             {children}
-            {toggleShow ? (
-                <img src="./images/icons/minus.png" alt="Close" />
-            ) : (
-                <img src="./images/icons/add.png" alt="Open" />
-            )}
+            {isCollapsed ? <img src="./images/icons/add.png" alt="Open" />
+                : <img src="./images/icons/minus.png" alt="Close" />}
         </Header>
     )
 }
 
 Accordion.Body = function AccordionBody({ children, ...props }) {
-    const { toggleShow } = useContext(ToggleContext)
-    const bodyRef = useRef(null)
+    const { isCollapsed } = useContext(ToggleContext)
 
     const dynamicStyles = {
-        maxHeight:  toggleShow ? "500px" : "0",
-        transition: toggleShow ? "max-height 1050ms ease-in" : "max-height 1050ms ease-out"
+        opacity:    isCollapsed ? 0 : 1,
+        maxHeight:  isCollapsed ? "0" : "500px",
+        transition: isCollapsed ? "max-height 550ms ease-in-out, opacity 150ms linear 0ms"
+                        : "max-height 550ms ease-in-out, opacity 150ms linear 150ms"
     }
 
-    return <Body ref={bodyRef} style={dynamicStyles} {...props}>{children}</Body>
+    return <Body style={dynamicStyles} {...props}>{children}</Body>
 }

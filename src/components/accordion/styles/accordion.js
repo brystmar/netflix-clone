@@ -20,7 +20,7 @@ export const Inner = styled.div`
 
 export const Item = styled.div`
   color: white;
-  margin-bottom: 0.8em;
+  margin-bottom: 1em;
 
   &:first-of-type {
     margin-top: 2.5em;
