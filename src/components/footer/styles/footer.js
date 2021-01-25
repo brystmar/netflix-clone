@@ -4,15 +4,15 @@ export const Container = styled.div`
   max-width: 100%;
   display: flex;
   flex-direction: column;
-  padding: 4.25em 3.5em;
+  padding: 3.75em 3.5em;
   margin: auto;
 
   @media (max-width: 1000px) {
-    padding: 4.25em 2em;
+    padding: 3.25em 2em;
   }
   
   @media (max-width: 600px) {
-    padding: 3em 1.5em;
+    padding: 2.75em 1.35em;
   }
 `
 
@@ -40,15 +40,11 @@ export const Link = styled.a`
 `
 
 export const Title = styled.p`
-  font-size: 1rem;
+  font-size: 1.2rem;
   color: #757575;
   margin-bottom: 2.5em;
-`
-
-export const Text = styled.p`
-  font-size: 0.8rem;
-  color: #757575;
-  margin-bottom: 1.5em;
+  text-align: center;
+  cursor: default;
 `
 
 export const Break = styled.div`
