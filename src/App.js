@@ -1,6 +1,7 @@
 import React from "react"
 import { BrowserRouter as Router, Switch } from "react-router-dom"
 import { Route } from "react-router-dom"
+import { routerPaths } from "./constants/routerPaths"
 import Home from "./pages/home"
 
 export default function App() {
@@ -8,19 +9,19 @@ export default function App() {
         <div className="app">
             <Router>
                 <Switch>
-                    <Route path="/login">
+                    <Route path={routerPaths.login}>
                         <p>Placeholder: Login page</p>
                     </Route>
 
-                    <Route path="/register">
+                    <Route path={routerPaths.register}>
                         <p>Placeholder: Registration page</p>
                     </Route>
 
-                    <Route path="/browse">
+                    <Route path={routerPaths.browse}>
                         <p>Placeholder: Browse content</p>
                     </Route>
 
-                    <Route path="/">
+                    <Route path={routerPaths.home}>
                         <Home />
                     </Route>
                 </Switch>
