@@ -9,7 +9,7 @@ export default function App() {
         <div className="app">
             <Router>
                 <Switch>
-                    <Route path={routerPaths.login}>
+                    <Route path={routerPaths.signin}>
                         <p>Placeholder: Login page</p>
                     </Route>
 
