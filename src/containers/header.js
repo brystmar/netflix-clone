@@ -9,7 +9,7 @@ export default function HeaderContainer({ children }) {
                 <Header.Logo
                     to={routerPaths.home}
                     src="/images/misc/logo.svg"
-                    alt="Netflix" />
+                    alt="React-Flix Logo" />
                 <Header.ButtonLink to={routerPaths.signin}>Sign In</Header.ButtonLink>
             </Header.Frame>
             {children}

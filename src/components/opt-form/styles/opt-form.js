@@ -20,7 +20,7 @@ export const Input = styled.input`
   height: 2.75em;
   border: none;
   padding: 0.6em;
-  
+
   @media (max-width: 1000px) {
     font-size: 1rem;
   }
@@ -28,9 +28,11 @@ export const Input = styled.input`
 
 export const Button = styled.button`
   font-size: 1.6rem;
+  //max-width: 800px;
+  //width: 100%;
+  height: 2.75em;
   display: flex;
   align-items: center;
-  height: 2.75em;
   background: #e50914;
   color: white;
   text-transform: uppercase;
@@ -69,3 +71,8 @@ export const Text = styled.p`
     line-height: 1.4em;
   }
 `;
+
+export const Break = styled.div`
+  flex-basis: 100%;
+  height: 0;
+`
