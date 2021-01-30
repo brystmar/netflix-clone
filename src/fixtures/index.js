@@ -2,7 +2,7 @@ export const faqData = [
     {
         "id":     1,
         "header": "What is React-Flix?",
-        "body":   "React-Flix is a streaming service that offers a wide variety of award-winning TV shows, films, anime, documentaries and more – on thousands of internet-connected devices.\n\nYou can watch as much as you want, whenever you want, without a single advert – all for one low monthly price. There's always something new to discover, and new TV shows and films are added every week!"
+        "body":   "React-Flix is a streaming service that offers a wide variety of award-winning TV shows, films, anime, documentaries, and more.\n\nWatch as much as you want, whenever you want, without advertisements – all for one low monthly price."
     },
     {
         "id":     2,
@@ -12,17 +12,17 @@ export const faqData = [
     {
         "id":     3,
         "header": "Where can I watch?",
-        "body":   "Watch anywhere, anytime, on an unlimited number of devices.  Sign in with your React-Flix account to watch instantly on the web at React-Flix.com from your personal computer or on any internet-connected device that offers the React-Flix app, including smart TVs, smartphones, tablets, streaming media players and game consoles.\n\nYou can also download your favorite shows with the iOS, Android, or Windows 10 app.  Use downloads to watch while you're on the go and without an internet connection.  Take React-Flix with you anywhere."
+        "body":   "Watch anywhere, anytime, on as many devices as you want.  Sign in with your React-Flix account to watch instantly on most any internet-connected devices, including smart TVs, smartphones, tablets, streaming media players, and game consoles.\n\nYou can also download your favorite shows with the iOS or Android app.  Take React-Flix with you anywhere."
     },
     {
         "id":     4,
         "header": "How do I cancel?",
-        "body":   "React-Flix is flexible.  There are no contracts and no commitments.  You can easily cancel your account online in two clicks.  There are no cancellation fees – start or stop your subscription at any time."
+        "body":   "React-Flix is flexible.  There are no contracts and no commitments.  You can easily cancel your account online in two clicks, and there are no cancellation fees."
     },
     {
         "id":     5,
         "header": "What can I watch on React-Flix?",
-        "body":   "React-Flix has an extensive library of feature films, documentaries, TV shows, award-winning React-Flix originals, and more.  Watch as much as you want, whenever you want."
+        "body":   "React-Flix has an extensive library of feature films, documentaries, TV shows, award-winning originals, and more!  Watch as much as you want, whenever you want."
     }
 ]
 
