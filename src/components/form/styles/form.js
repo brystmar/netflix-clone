@@ -5,20 +5,20 @@ export const Container = styled.section`
   background-color: rgba(0, 0, 0, 0.75);
   display: flex;
   flex-direction: column;
-  min-height: 660px;
+  min-height: 450px;
   width: 100%;
-  max-width: 450px;
+  max-width: 500px;
   border-radius: 5px;
   margin: auto auto 100px auto;
   padding: 3.75em 4.25em 3.75em;
 `
 
 export const Error = styled.div`
-  font-size: 14px;
+  font-size: 0.875rem;
   background: #e87c03;
   color: white;
   margin: 0 0 1.15em;
-  padding: 1.05em 1.425em;
+  padding: 1.1em 1.425em;
   border-radius: 4px;
 `
 
@@ -33,7 +33,7 @@ export const Title = styled.h1`
   font-size: 2rem;
   font-weight: bold;
   color: #fff;
-  margin-bottom: 0.9em;
+  margin: 0 0 1em;
 `
 
 export const Text = styled.h1`
@@ -69,7 +69,7 @@ export const Input = styled.input`
   padding: 0.325em 1.25em;
 
   &:last-of-type {
-    margin-bottom: 1.9em;
+    margin-bottom: 2em;
   }
 `
 
