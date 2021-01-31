@@ -7,7 +7,7 @@ import { FirebaseContext } from "./context/firebase"
 import { firebaseConfig } from "./constants/firebaseConfig"
 
 const firebase = window.firebase.initializeApp(firebaseConfig);
-const firebaseAnalytics = window.firebase.analytics();
+// const firebaseAnalytics = window.firebase.analytics();
 
 ReactDOM.render(
     <React.StrictMode>

@@ -2,7 +2,7 @@ import React from "react"
 import { BrowserRouter as Router, Switch } from "react-router-dom"
 import { Route } from "react-router-dom"
 import { routerPaths } from "./constants/routerPaths"
-import Home from "./pages/home"
+import { Home, Signin } from "./pages"
 
 export default function App() {
     return (
@@ -10,7 +10,7 @@ export default function App() {
             <Router>
                 <Switch>
                     <Route path={routerPaths.signin}>
-                        <p>Placeholder: Login page</p>
+                        <Signin />
                     </Route>
 
                     <Route path={routerPaths.register}>
