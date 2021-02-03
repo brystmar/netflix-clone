@@ -1,13 +1,13 @@
 import React, { useState } from 'react'
 import { Form } from '../components'
-import HeaderContainer from "../containers/header"
-import FooterContainer from "../containers/footer";
+import { HeaderContainer } from "../containers/header"
+import { FooterContainer } from "../containers/footer";
 
 export default function Signin() {
     const [ error, setError ] = useState("")
     const [ emailAddress, setEmailAddress ] = useState("")
     const [ password, setPassword ] = useState("")
-    const isInvalid = password === "" | emailAddress === ""
+    const isInvalid = password === "" || emailAddress === ""
 
     function handleSignin(event) {
         event.preventDefault()

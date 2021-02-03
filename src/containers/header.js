@@ -2,7 +2,7 @@ import React from "react"
 import { Header } from "../components"
 import { routerPaths } from "../constants/routerPaths"
 
-export default function HeaderContainer({ children }) {
+export function HeaderContainer({ children }) {
     return (
         <Header>
             <Header.Frame>

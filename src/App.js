@@ -2,7 +2,7 @@ import React from "react"
 import { BrowserRouter as Router, Switch } from "react-router-dom"
 import { Route } from "react-router-dom"
 import { routerPaths } from "./constants/routerPaths"
-import { Home, Signin } from "./pages"
+import { Home, Signin, Signup, Browse } from "./pages"
 
 export default function App() {
     return (
@@ -13,12 +13,12 @@ export default function App() {
                         <Signin />
                     </Route>
 
-                    <Route path={routerPaths.register}>
-                        <p>Placeholder: Registration page</p>
+                    <Route path={routerPaths.signup}>
+                        <Signup />
                     </Route>
 
                     <Route path={routerPaths.browse}>
-                        <p>Placeholder: Browse content</p>
+                        <Browse />
                     </Route>
 
                     <Route path={routerPaths.home}>

@@ -1,6 +1,6 @@
 export const routerPaths = {
-    home: "/",
+    home:   "/",
     browse: "/browse",
-    register: "/register",
+    signup: "/signup",
     signin: "/signin"
 }

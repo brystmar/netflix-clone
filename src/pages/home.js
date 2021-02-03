@@ -1,8 +1,8 @@
 import React from "react"
-import JumbotronContainer from "../containers/jumbotron";
-import HeaderContainer from "../containers/header";
-import FooterContainer from "../containers/footer";
-import FaqsContainer from "../containers/faqs";
+import { JumbotronContainer } from "../containers/jumbotron";
+import { HeaderContainer } from "../containers/header";
+import { FooterContainer } from "../containers/footer";
+import { FaqsContainer } from "../containers/faqs";
 import { Feature, OptForm } from "../components";
 
 export default function Home() {
