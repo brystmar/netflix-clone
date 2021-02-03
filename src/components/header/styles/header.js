@@ -73,3 +73,55 @@ export const ButtonLink = styled(ReachRouterLink)`
     background: #f40612;
   }
 `
+
+export const Group = styled.div`
+  display: flex;
+  align-items: center;
+`
+
+export const Text = styled.p`
+  font-size: 1.4rem;
+  color: #fff;
+  line-height: normal;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+`
+
+export const Feature = styled(Container)`
+  flex-direction: column;
+  align-items: normal;
+  padding: 150px 0 500px 0;
+  width: 50%;
+
+  @media (max-width: 1100px) {
+    display: none;
+  }
+`
+
+export const FeatureCallOut = styled.h2`
+  font-size: 3.125rem;
+  font-weight: bold;
+  line-height: normal;
+  color: white;
+  margin: 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.45);
+`
+
+export const PlayButton = styled.button`
+  font-size: 1.25rem;
+  font-weight: bold;
+  background-color: #e6e6e6;
+  color: #000;
+  max-width: 130px;
+  margin-top: 10px;
+  border-width: 0;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+  box-shadow: 0 0.6vw 1vw -0.4vw rgba(0, 0, 0, 0.35);
+  transition: background-color 0.5s ease;
+
+  &:hover {
+    background: #ff1e1e;
+    color: white;
+  }
+`

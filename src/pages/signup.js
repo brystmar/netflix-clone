@@ -1,4 +1,5 @@
 import React, { useState, useContext } from "react"
+import { useHistory } from "react-router-dom"
 import { HeaderContainer } from "../containers/header"
 import { FooterContainer } from "../containers/footer"
 import { Form } from "../components"
@@ -11,6 +12,7 @@ export default function Signup() {
     const [ password, setPassword ] = useState('')
     const [ passwordConfirmation, setPasswordConfirmation ] = useState('')
     const [ error, setError ] = useState('')
+    const history = useHistory()
     const { firebase } = useContext(FirebaseContext)
 
     const isInvalid = name === '' || password === '' || emailAddress === '' || password !== passwordConfirmation
@@ -31,7 +33,7 @@ export default function Signup() {
                     setEmailAddress('');
                     setPassword('');
                     setError('');
-                    window.history.push(routerPaths.browse);
+                    history.push(routerPaths.browse);
                 })
             ).catch((error) => setError(error.message));
     };
