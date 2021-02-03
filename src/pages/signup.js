@@ -1,20 +1,40 @@
-import React, { useState } from "react"
+import React, { useState, useContext } from "react"
 import { HeaderContainer } from "../containers/header"
 import { FooterContainer } from "../containers/footer"
-import { Form } from '../components'
+import { Form } from "../components"
+import { FirebaseContext } from "../context/firebase"
+import { routerPaths } from "../constants/routerPaths"
 
 export default function Signup() {
-    const [ firstName, setFirstName ] = useState('')
+    const [ name, setName ] = useState('')
     const [ emailAddress, setEmailAddress ] = useState('')
     const [ password, setPassword ] = useState('')
     const [ passwordConfirmation, setPasswordConfirmation ] = useState('')
     const [ error, setError ] = useState('')
+    const { firebase } = useContext(FirebaseContext)
 
-    const isInvalid = firstName === '' || password === '' || emailAddress === '' || password !== passwordConfirmation
+    const isInvalid = name === '' || password === '' || emailAddress === '' || password !== passwordConfirmation
 
     const handleSignup = (event) => {
         event.preventDefault()
-    }
+
+        firebase
+            .auth()
+            .createUserWithEmailAndPassword(emailAddress, password)
+            .then((result) => result.user
+                .updateProfile({
+                    displayName: name,
+                    photoURL:    Math.floor(Math.random() * 5) + 1,
+
+                })
+                .then(() => {
+                    setEmailAddress('');
+                    setPassword('');
+                    setError('');
+                    window.history.push(routerPaths.browse);
+                })
+            ).catch((error) => setError(error.message));
+    };
 
     return (
         <>
@@ -25,9 +45,9 @@ export default function Signup() {
 
                     <Form.Base onSubmit={handleSignup} method="POST">
                         <Form.Input
-                            placeholder="First Name"
-                            value={firstName}
-                            onChange={({ target }) => setFirstName(target.value)}
+                            placeholder="Name"
+                            value={name}
+                            onChange={({ target }) => setName(target.value)}
                         />
                         <Form.Input
                             placeholder="Email Address"
