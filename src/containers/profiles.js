@@ -1,10 +1,10 @@
 import React from "react"
-import { Header } from "../components"
+import { Header, Profiles } from "../components"
 import { routerPaths } from "../constants/routerPaths"
 
-export function SelectProfileContainer() {
+export function SelectProfileContainer(props) {
     return (
-        <p>
+        <>
             <Header bg={false}>
                 <Header.Frame>
                     <Header.Logo
@@ -14,7 +14,27 @@ export function SelectProfileContainer() {
                     />
                 </Header.Frame>
             </Header>
-
-        </p>
+            <Profiles>
+                <Profiles.Title>Who's watching?</Profiles.Title>
+                <Profiles.List>
+                    <Profiles.User
+                        onClick={() => props.setProfile({
+                            displayName: props.user.displayName,
+                            photoURL:    props.user.photoURL
+                        })}
+                    >
+                        <Profiles.Picture src={props.user.photoURL} />
+                        <Profiles.Name>{props.user.displayName}</Profiles.Name>
+                    </Profiles.User>
+                </Profiles.List>
+            </Profiles>
+        </>
     )
+}
+
+SelectProfileContainer.defaultProps = {
+    user: {
+        displayName: "",
+        photoURL:    ""
+    }
 }
