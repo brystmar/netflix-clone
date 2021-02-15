@@ -1,17 +1,9 @@
-import React from "react"
-import {
-    Background,
-    Container,
-    Logo,
-    ButtonLink,
-    Link,
-    Text,
-    Group,
-    Feature,
-    FeatureCallOut,
-    PlayButton
-} from "./styles/header"
+import React, { useState } from "react"
 import { Link as ReachRouterLink } from "react-router-dom"
+import {
+    Background, Container, Logo, ButtonLink, Link, Text, Group,
+    Feature, FeatureCallOut, PlayButton, Search, SearchIcon, SearchInput
+} from "./styles/header"
 
 export default function Header({ bg = true, children, ...props }) {
     return bg ? <Background {...props}>{children}</Background> : children
@@ -55,4 +47,22 @@ Header.FeatureCallOut = function HeaderFeatureCallOut({ children, ...props }) {
 
 Header.PlayButton = function HeaderPlayButton({ children, ...props }) {
     return <PlayButton {...props}>{children}</PlayButton>
+}
+
+Header.Search = function HeaderSearch({ searchTerm, setSearchTerm, ...props }) {
+    const [ searchActive, setSearchActive ] = useState(false)
+
+    return (
+        <Search {...props}>
+            <SearchIcon onClick={() => setSearchActive(!searchActive)}>
+                <img src="/images/icons/search.png" alt="Search" />
+            </SearchIcon>
+            <SearchInput
+                value={searchTerm}
+                onChange={({ target }) => setSearchTerm(target.value)}
+                placeholder="Search content"
+                active={searchActive}
+            />
+        </Search>
+    )
 }

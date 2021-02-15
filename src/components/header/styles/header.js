@@ -125,3 +125,36 @@ export const PlayButton = styled.button`
     color: white;
   }
 `
+
+export const Search = styled.div`
+  display: flex;
+  align-items: center;
+
+  @media (max-width: 700px) {
+    display: none;
+  }
+`
+
+export const SearchIcon = styled.button`
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+
+  img {
+    filter: brightness(0) invert(1);
+    width: 16px;
+  }
+`
+
+export const SearchInput = styled.input`
+  font-size: 0.875rem;
+  height: 30px;
+  color: white;
+  background-color: #444444;
+  border: 1px solid white;
+  transition: width 0.5s;
+  margin-left: ${({ active }) => (active === true ? '10px' : '0')};
+  padding: ${({ active }) => (active === true ? '0 10px' : '0')};
+  opacity: ${({ active }) => (active === true ? '1' : '0')};
+  width: ${({ active }) => (active === true ? '200px' : '0px')};
+`
