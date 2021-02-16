@@ -9,18 +9,17 @@ import "firebase/auth"
 import "firebase/firestore"
 import { FirebaseContext } from "./context/firebase"
 import { firebaseConfig } from "./constants/firebaseConfig"
-import seedDatabase from "./seed"
+import seedContentMetadata from "./seedContentMetadata";
 
 // Initialize Firebase using our config
 firebase.initializeApp(firebaseConfig);
 // firebase.auth();
+
 // Initialize the Firebase analytics
 // firebase.analytics();
 
 let db = firebase.firestore();
-
-// Hydrate our db with seed data
-seedDatabase(db);
+seedContentMetadata(db);
 
 ReactDOM.render(
     <React.StrictMode>
