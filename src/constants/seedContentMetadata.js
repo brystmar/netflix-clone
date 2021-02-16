@@ -1,4 +1,4 @@
-import { tvContent, movieContent } from "./constants/contentMetadata"
+import { tvContent, movieContent } from "./contentMetadata"
 import { v4 as uuid } from "uuid"
 
 export default function seedContentMetadata(db) {
