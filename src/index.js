@@ -12,14 +12,14 @@ import { firebaseConfig } from "./constants/firebaseConfig"
 
 // Initialize Firebase using our config
 firebase.initializeApp(firebaseConfig);
-// firebase.auth();
+firebase.auth();
 
 // Initialize the Firebase analytics
 // firebase.analytics();
 
 ReactDOM.render(
     <React.StrictMode>
-        <FirebaseContext.Provider value={{ firebase: window.firebase }}>
+        <FirebaseContext.Provider value={{ firebase: firebase }}>
             <GlobalStyles />
             <App />
         </FirebaseContext.Provider>
