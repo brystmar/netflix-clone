@@ -1,4 +1,4 @@
-function seedDatabase(firebase) {
+export default function seedDatabase(db) {
     function getUUID() {
         return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, c => {
             const piece = (Math.random() * 16) | 0;
@@ -10,23 +10,35 @@ function seedDatabase(firebase) {
     /* Series
       ============================================ */
     // Documentaries
-    firebase.firestore().collection('series').add({
+    db.collection('series').add({
         id:          getUUID(),
         title:       'Tiger King',
         description: 'An exploration of big cat breeding and its bizarre underworld, populated by eccentric characters.',
         genre:       'documentaries',
         maturity:    '18',
         slug:        'tiger-king',
-    });
-    firebase.firestore().collection('series').add({
+    })
+        .then((docRef) => {
+            console.log("Document written with ID:", docRef.id, docRef.title);
+        })
+        .catch((error) => {
+            console.error("Error adding document:", error);
+        });
+    db.collection('series').add({
         id:          getUUID(),
         title:       'Amanda Knox',
         description: 'Amanda Marie Knox is an American woman who spent almost four years in an Italian prison.',
         genre:       'documentaries',
         maturity:    '12',
         slug:        'amanda-knox',
-    });
-    firebase.firestore().collection('series').add({
+    })
+        .then((docRef) => {
+            console.log("Document written with ID:", docRef.id, docRef.title);
+        })
+        .catch((error) => {
+            console.error("Error adding document:", error);
+        });
+    db.collection('series').add({
         id:       getUUID(),
         title:    'Citizenfour',
         description:
@@ -34,8 +46,14 @@ function seedDatabase(firebase) {
         genre:    'documentaries',
         maturity: '12',
         slug:     'citizenfour',
-    });
-    firebase.firestore().collection('series').add({
+    })
+        .then((docRef) => {
+            console.log("Document written with ID:", docRef.id, docRef.title);
+        })
+        .catch((error) => {
+            console.error("Error adding document:", error);
+        });
+    db.collection('series').add({
         id:       getUUID(),
         title:    'Super Size Me',
         description:
@@ -43,8 +61,14 @@ function seedDatabase(firebase) {
         genre:    'documentaries',
         maturity: '12',
         slug:     'super-size-me',
-    });
-    firebase.firestore().collection('series').add({
+    })
+        .then((docRef) => {
+            console.log("Document written with ID:", docRef.id, docRef.title);
+        })
+        .catch((error) => {
+            console.error("Error adding document:", error);
+        });
+    db.collection('series').add({
         id:       getUUID(),
         title:    'Man on Wire',
         description:
@@ -52,10 +76,16 @@ function seedDatabase(firebase) {
         genre:    'documentaries',
         maturity: '12',
         slug:     'man-on-wire',
-    });
+    })
+        .then((docRef) => {
+            console.log("Document written with ID:", docRef.id, docRef.title);
+        })
+        .catch((error) => {
+            console.error("Error adding document:", error);
+        });
 
     // Comedies
-    firebase.firestore().collection('series').add({
+    db.collection('series').add({
         id:       getUUID(),
         title:    'The Office',
         description:
@@ -63,8 +93,14 @@ function seedDatabase(firebase) {
         genre:    'comedies',
         maturity: '15',
         slug:     'the-office',
-    });
-    firebase.firestore().collection('series').add({
+    })
+        .then((docRef) => {
+            console.log("Document written with ID:", docRef.id, docRef.title);
+        })
+        .catch((error) => {
+            console.error("Error adding document:", error);
+        });
+    db.collection('series').add({
         id:       getUUID(),
         title:    'Arrested Development',
         description:
@@ -72,8 +108,14 @@ function seedDatabase(firebase) {
         genre:    'comedies',
         maturity: '15',
         slug:     'arrested-development',
-    });
-    firebase.firestore().collection('series').add({
+    })
+        .then((docRef) => {
+            console.log("Document written with ID:", docRef.id, docRef.title);
+        })
+        .catch((error) => {
+            console.error("Error adding document:", error);
+        });
+    db.collection('series').add({
         id:       getUUID(),
         title:    'Curb Your Enthusiasm',
         description:
@@ -81,8 +123,14 @@ function seedDatabase(firebase) {
         genre:    'comedies',
         maturity: '15',
         slug:     'curb-your-enthusiasm',
-    });
-    firebase.firestore().collection('series').add({
+    })
+        .then((docRef) => {
+            console.log("Document written with ID:", docRef.id, docRef.title);
+        })
+        .catch((error) => {
+            console.error("Error adding document:", error);
+        });
+    db.collection('series').add({
         id:       getUUID(),
         title:    'Family Guy',
         description:
@@ -90,8 +138,14 @@ function seedDatabase(firebase) {
         genre:    'comedies',
         maturity: '15',
         slug:     'family-guy',
-    });
-    firebase.firestore().collection('series').add({
+    })
+        .then((docRef) => {
+            console.log("Document written with ID:", docRef.id, docRef.title);
+        })
+        .catch((error) => {
+            console.error("Error adding document:", error);
+        });
+    db.collection('series').add({
         id:       getUUID(),
         title:    'South Park',
         description:
@@ -99,10 +153,16 @@ function seedDatabase(firebase) {
         genre:    'comedies',
         maturity: '15',
         slug:     'south-park',
-    });
+    })
+        .then((docRef) => {
+            console.log("Document written with ID:", docRef.id, docRef.title);
+        })
+        .catch((error) => {
+            console.error("Error adding document:", error);
+        });
 
     // Children
-    firebase.firestore().collection('series').add({
+    db.collection('series').add({
         id:       getUUID(),
         title:    'Peppa Pig',
         description:
@@ -110,8 +170,14 @@ function seedDatabase(firebase) {
         genre:    'children',
         maturity: '0',
         slug:     'peppa-pig',
-    });
-    firebase.firestore().collection('series').add({
+    })
+        .then((docRef) => {
+            console.log("Document written with ID:", docRef.id, docRef.title);
+        })
+        .catch((error) => {
+            console.error("Error adding document:", error);
+        });
+    db.collection('series').add({
         id:       getUUID(),
         title:    'Dora The Explorer',
         description:
@@ -119,8 +185,14 @@ function seedDatabase(firebase) {
         genre:    'children',
         maturity: '0',
         slug:     'dora-the-explorer',
-    });
-    firebase.firestore().collection('series').add({
+    })
+        .then((docRef) => {
+            console.log("Document written with ID:", docRef.id, docRef.title);
+        })
+        .catch((error) => {
+            console.error("Error adding document:", error);
+        });
+    db.collection('series').add({
         id:       getUUID(),
         title:    'PAW Patrol',
         description:
@@ -128,8 +200,14 @@ function seedDatabase(firebase) {
         genre:    'children',
         maturity: '0',
         slug:     'paw-patrol',
-    });
-    firebase.firestore().collection('series').add({
+    })
+        .then((docRef) => {
+            console.log("Document written with ID:", docRef.id, docRef.title);
+        })
+        .catch((error) => {
+            console.error("Error adding document:", error);
+        });
+    db.collection('series').add({
         id:       getUUID(),
         title:    'Arthur',
         description:
@@ -137,8 +215,14 @@ function seedDatabase(firebase) {
         genre:    'children',
         maturity: '0',
         slug:     'arthur',
-    });
-    firebase.firestore().collection('series').add({
+    })
+        .then((docRef) => {
+            console.log("Document written with ID:", docRef.id, docRef.title);
+        })
+        .catch((error) => {
+            console.error("Error adding document:", error);
+        });
+    db.collection('series').add({
         id:       getUUID(),
         title:    'SpongeBob',
         description:
@@ -146,10 +230,16 @@ function seedDatabase(firebase) {
         genre:    'children',
         maturity: '0',
         slug:     'spongebob',
-    });
+    })
+        .then((docRef) => {
+            console.log("Document written with ID:", docRef.id, docRef.title);
+        })
+        .catch((error) => {
+            console.error("Error adding document:", error);
+        });
 
     // Crime
-    firebase.firestore().collection('series').add({
+    db.collection('series').add({
         id:       getUUID(),
         title:    'Making a Murderer',
         description:
@@ -157,8 +247,14 @@ function seedDatabase(firebase) {
         genre:    'crime',
         maturity: '18',
         slug:     'making-a-murderer',
-    });
-    firebase.firestore().collection('series').add({
+    })
+        .then((docRef) => {
+            console.log("Document written with ID:", docRef.id, docRef.title);
+        })
+        .catch((error) => {
+            console.error("Error adding document:", error);
+        });
+    db.collection('series').add({
         id:       getUUID(),
         title:    'Long Shot',
         description:
@@ -166,8 +262,14 @@ function seedDatabase(firebase) {
         genre:    'crime',
         maturity: '18',
         slug:     'long-shot',
-    });
-    firebase.firestore().collection('series').add({
+    })
+        .then((docRef) => {
+            console.log("Document written with ID:", docRef.id, docRef.title);
+        })
+        .catch((error) => {
+            console.error("Error adding document:", error);
+        });
+    db.collection('series').add({
         id:       getUUID(),
         title:    'The Confession Killer',
         description:
@@ -175,8 +277,14 @@ function seedDatabase(firebase) {
         genre:    'crime',
         maturity: '18',
         slug:     'the-confession-killer',
-    });
-    firebase.firestore().collection('series').add({
+    })
+        .then((docRef) => {
+            console.log("Document written with ID:", docRef.id, docRef.title);
+        })
+        .catch((error) => {
+            console.error("Error adding document:", error);
+        });
+    db.collection('series').add({
         id:       getUUID(),
         title:    'The Innocent Man',
         description:
@@ -184,8 +292,14 @@ function seedDatabase(firebase) {
         genre:    'crime',
         maturity: '18',
         slug:     'the-innocent-man',
-    });
-    firebase.firestore().collection('series').add({
+    })
+        .then((docRef) => {
+            console.log("Document written with ID:", docRef.id, docRef.title);
+        })
+        .catch((error) => {
+            console.error("Error adding document:", error);
+        });
+    db.collection('series').add({
         id:       getUUID(),
         title:    'The Staircase',
         description:
@@ -193,10 +307,16 @@ function seedDatabase(firebase) {
         genre:    'crime',
         maturity: '18',
         slug:     'the-staircase',
-    });
+    })
+        .then((docRef) => {
+            console.log("Document written with ID:", docRef.id, docRef.title);
+        })
+        .catch((error) => {
+            console.error("Error adding document:", error);
+        });
 
     // Feel-good
-    firebase.firestore().collection('series').add({
+    db.collection('series').add({
         id:       getUUID(),
         title:    'Good Will Hunting',
         description:
@@ -204,8 +324,14 @@ function seedDatabase(firebase) {
         genre:    'feel-good',
         maturity: '12',
         slug:     'good-will-hunting',
-    });
-    firebase.firestore().collection('series').add({
+    })
+        .then((docRef) => {
+            console.log("Document written with ID:", docRef.id, docRef.title);
+        })
+        .catch((error) => {
+            console.error("Error adding document:", error);
+        });
+    db.collection('series').add({
         id:       getUUID(),
         title:    'Forrest Gump',
         description:
@@ -213,8 +339,14 @@ function seedDatabase(firebase) {
         genre:    'feel-good',
         maturity: '12',
         slug:     'forrest-gump',
-    });
-    firebase.firestore().collection('series').add({
+    })
+        .then((docRef) => {
+            console.log("Document written with ID:", docRef.id, docRef.title);
+        })
+        .catch((error) => {
+            console.error("Error adding document:", error);
+        });
+    db.collection('series').add({
         id:       getUUID(),
         title:    'Juno',
         description:
@@ -222,8 +354,14 @@ function seedDatabase(firebase) {
         genre:    'feel-good',
         maturity: '12',
         slug:     'juno',
-    });
-    firebase.firestore().collection('series').add({
+    })
+        .then((docRef) => {
+            console.log("Document written with ID:", docRef.id, docRef.title);
+        })
+        .catch((error) => {
+            console.error("Error adding document:", error);
+        });
+    db.collection('series').add({
         id:       getUUID(),
         title:    'Midnight In Paris',
         description:
@@ -231,8 +369,14 @@ function seedDatabase(firebase) {
         genre:    'feel-good',
         maturity: '12',
         slug:     'midnight-in-paris',
-    });
-    firebase.firestore().collection('series').add({
+    })
+        .then((docRef) => {
+            console.log("Document written with ID:", docRef.id, docRef.title);
+        })
+        .catch((error) => {
+            console.error("Error adding document:", error);
+        });
+    db.collection('series').add({
         id:       getUUID(),
         title:    'School of Rock',
         description:
@@ -240,12 +384,18 @@ function seedDatabase(firebase) {
         genre:    'feel-good',
         maturity: '12',
         slug:     'school-of-rock',
-    });
+    })
+        .then((docRef) => {
+            console.log("Document written with ID:", docRef.id, docRef.title);
+        })
+        .catch((error) => {
+            console.error("Error adding document:", error);
+        });
 
     /* Films
       ============================================ */
     // Drama
-    firebase.firestore().collection('films').add({
+    db.collection('films').add({
         id:       getUUID(),
         title:    'The Prestige',
         description:
@@ -253,8 +403,14 @@ function seedDatabase(firebase) {
         genre:    'drama',
         maturity: '15',
         slug:     'the-prestige',
-    });
-    firebase.firestore().collection('films').add({
+    })
+        .then((docRef) => {
+            console.log("Document written with ID:", docRef.id, docRef.title);
+        })
+        .catch((error) => {
+            console.error("Error adding document:", error);
+        });
+    db.collection('films').add({
         id:       getUUID(),
         title:    'Fight Club',
         description:
@@ -262,8 +418,14 @@ function seedDatabase(firebase) {
         genre:    'drama',
         maturity: '15',
         slug:     'fight-club',
-    });
-    firebase.firestore().collection('films').add({
+    })
+        .then((docRef) => {
+            console.log("Document written with ID:", docRef.id, docRef.title);
+        })
+        .catch((error) => {
+            console.error("Error adding document:", error);
+        });
+    db.collection('films').add({
         id:       getUUID(),
         title:    'Kings Speech',
         description:
@@ -271,8 +433,14 @@ function seedDatabase(firebase) {
         genre:    'drama',
         maturity: '15',
         slug:     'kings-speech',
-    });
-    firebase.firestore().collection('films').add({
+    })
+        .then((docRef) => {
+            console.log("Document written with ID:", docRef.id, docRef.title);
+        })
+        .catch((error) => {
+            console.error("Error adding document:", error);
+        });
+    db.collection('films').add({
         id:       getUUID(),
         title:    'The Revenant',
         description:
@@ -280,8 +448,14 @@ function seedDatabase(firebase) {
         genre:    'drama',
         maturity: '15',
         slug:     'the-revenant',
-    });
-    firebase.firestore().collection('films').add({
+    })
+        .then((docRef) => {
+            console.log("Document written with ID:", docRef.id, docRef.title);
+        })
+        .catch((error) => {
+            console.error("Error adding document:", error);
+        });
+    db.collection('films').add({
         id:       getUUID(),
         title:    'The Social Network',
         description:
@@ -289,10 +463,16 @@ function seedDatabase(firebase) {
         genre:    'drama',
         maturity: '12',
         slug:     'the-social-network',
-    });
+    })
+        .then((docRef) => {
+            console.log("Document written with ID:", docRef.id, docRef.title);
+        })
+        .catch((error) => {
+            console.error("Error adding document:", error);
+        });
 
     // Suspense
-    firebase.firestore().collection('films').add({
+    db.collection('films').add({
         id:       getUUID(),
         title:    'Shutter Island',
         description:
@@ -300,8 +480,14 @@ function seedDatabase(firebase) {
         genre:    'suspense',
         maturity: '15',
         slug:     'shutter-island',
-    });
-    firebase.firestore().collection('films').add({
+    })
+        .then((docRef) => {
+            console.log("Document written with ID:", docRef.id, docRef.title);
+        })
+        .catch((error) => {
+            console.error("Error adding document:", error);
+        });
+    db.collection('films').add({
         id:       getUUID(),
         title:    'Gone Girl',
         description:
@@ -309,8 +495,14 @@ function seedDatabase(firebase) {
         genre:    'suspense',
         maturity: '15',
         slug:     'gone-girl',
-    });
-    firebase.firestore().collection('films').add({
+    })
+        .then((docRef) => {
+            console.log("Document written with ID:", docRef.id, docRef.title);
+        })
+        .catch((error) => {
+            console.error("Error adding document:", error);
+        });
+    db.collection('films').add({
         id:       getUUID(),
         title:    'Prisoners',
         description:
@@ -318,8 +510,14 @@ function seedDatabase(firebase) {
         genre:    'suspense',
         maturity: '15',
         slug:     'prisoners',
-    });
-    firebase.firestore().collection('films').add({
+    })
+        .then((docRef) => {
+            console.log("Document written with ID:", docRef.id, docRef.title);
+        })
+        .catch((error) => {
+            console.error("Error adding document:", error);
+        });
+    db.collection('films').add({
         id:       getUUID(),
         title:    'Seven',
         description:
@@ -327,8 +525,14 @@ function seedDatabase(firebase) {
         genre:    'suspense',
         maturity: '15',
         slug:     'seven',
-    });
-    firebase.firestore().collection('films').add({
+    })
+        .then((docRef) => {
+            console.log("Document written with ID:", docRef.id, docRef.title);
+        })
+        .catch((error) => {
+            console.error("Error adding document:", error);
+        });
+    db.collection('films').add({
         id:       getUUID(),
         title:    'Zodiac',
         description:
@@ -336,10 +540,16 @@ function seedDatabase(firebase) {
         genre:    'suspense',
         maturity: '15',
         slug:     'zodiac',
-    });
+    })
+        .then((docRef) => {
+            console.log("Document written with ID:", docRef.id, docRef.title);
+        })
+        .catch((error) => {
+            console.error("Error adding document:", error);
+        });
 
     // Children
-    firebase.firestore().collection('films').add({
+    db.collection('films').add({
         id:       getUUID(),
         title:    'Hotel Transylvania',
         description:
@@ -347,8 +557,14 @@ function seedDatabase(firebase) {
         genre:    'children',
         maturity: '0',
         slug:     'hotel-transylvania',
-    });
-    firebase.firestore().collection('films').add({
+    })
+        .then((docRef) => {
+            console.log("Document written with ID:", docRef.id, docRef.title);
+        })
+        .catch((error) => {
+            console.error("Error adding document:", error);
+        });
+    db.collection('films').add({
         id:       getUUID(),
         title:    'Despicable Me',
         description:
@@ -356,8 +572,14 @@ function seedDatabase(firebase) {
         genre:    'children',
         maturity: '0',
         slug:     'despicable-me',
-    });
-    firebase.firestore().collection('films').add({
+    })
+        .then((docRef) => {
+            console.log("Document written with ID:", docRef.id, docRef.title);
+        })
+        .catch((error) => {
+            console.error("Error adding document:", error);
+        });
+    db.collection('films').add({
         id:       getUUID(),
         title:    'Frozen',
         description:
@@ -365,8 +587,14 @@ function seedDatabase(firebase) {
         genre:    'children',
         maturity: '0',
         slug:     'frozen',
-    });
-    firebase.firestore().collection('films').add({
+    })
+        .then((docRef) => {
+            console.log("Document written with ID:", docRef.id, docRef.title);
+        })
+        .catch((error) => {
+            console.error("Error adding document:", error);
+        });
+    db.collection('films').add({
         id:       getUUID(),
         title:    'Spirited Away',
         description:
@@ -374,8 +602,14 @@ function seedDatabase(firebase) {
         genre:    'children',
         maturity: '0',
         slug:     'spirited-away',
-    });
-    firebase.firestore().collection('films').add({
+    })
+        .then((docRef) => {
+            console.log("Document written with ID:", docRef.id, docRef.title);
+        })
+        .catch((error) => {
+            console.error("Error adding document:", error);
+        });
+    db.collection('films').add({
         id:       getUUID(),
         title:    'Up',
         description:
@@ -383,10 +617,16 @@ function seedDatabase(firebase) {
         genre:    'children',
         maturity: '0',
         slug:     'up',
-    });
+    })
+        .then((docRef) => {
+            console.log("Document written with ID:", docRef.id, docRef.title);
+        })
+        .catch((error) => {
+            console.error("Error adding document:", error);
+        });
 
     // Thriller
-    firebase.firestore().collection('films').add({
+    db.collection('films').add({
         id:       getUUID(),
         title:    'Joker',
         description:
@@ -394,8 +634,14 @@ function seedDatabase(firebase) {
         genre:    'thriller',
         maturity: '15',
         slug:     'joker',
-    });
-    firebase.firestore().collection('films').add({
+    })
+        .then((docRef) => {
+            console.log("Document written with ID:", docRef.id, docRef.title);
+        })
+        .catch((error) => {
+            console.error("Error adding document:", error);
+        });
+    db.collection('films').add({
         id:       getUUID(),
         title:    'A Quiet Place',
         description:
@@ -403,8 +649,14 @@ function seedDatabase(firebase) {
         genre:    'thriller',
         maturity: '15',
         slug:     'a-quiet-place',
-    });
-    firebase.firestore().collection('films').add({
+    })
+        .then((docRef) => {
+            console.log("Document written with ID:", docRef.id, docRef.title);
+        })
+        .catch((error) => {
+            console.error("Error adding document:", error);
+        });
+    db.collection('films').add({
         id:       getUUID(),
         title:    'Black Swan',
         description:
@@ -412,8 +664,14 @@ function seedDatabase(firebase) {
         genre:    'thriller',
         maturity: '15',
         slug:     'black-swan',
-    });
-    firebase.firestore().collection('films').add({
+    })
+        .then((docRef) => {
+            console.log("Document written with ID:", docRef.id, docRef.title);
+        })
+        .catch((error) => {
+            console.error("Error adding document:", error);
+        });
+    db.collection('films').add({
         id:       getUUID(),
         title:    'Nightcrawler',
         description:
@@ -421,8 +679,14 @@ function seedDatabase(firebase) {
         genre:    'thriller',
         maturity: '15',
         slug:     'nightcrawler',
-    });
-    firebase.firestore().collection('films').add({
+    })
+        .then((docRef) => {
+            console.log("Document written with ID:", docRef.id, docRef.title);
+        })
+        .catch((error) => {
+            console.error("Error adding document:", error);
+        });
+    db.collection('films').add({
         id:       getUUID(),
         title:    'The Silence of The Lambs',
         description:
@@ -430,10 +694,16 @@ function seedDatabase(firebase) {
         genre:    'thriller',
         maturity: '15',
         slug:     'the-silence-of-the-lambs',
-    });
+    })
+        .then((docRef) => {
+            console.log("Document written with ID:", docRef.id, docRef.title);
+        })
+        .catch((error) => {
+            console.error("Error adding document:", error);
+        });
 
     // Romance
-    firebase.firestore().collection('films').add({
+    db.collection('films').add({
         id:       getUUID(),
         title:    'A Star Is Born',
         description:
@@ -441,8 +711,14 @@ function seedDatabase(firebase) {
         genre:    'romance',
         maturity: '15',
         slug:     'a-star-is-born',
-    });
-    firebase.firestore().collection('films').add({
+    })
+        .then((docRef) => {
+            console.log("Document written with ID:", docRef.id, docRef.title);
+        })
+        .catch((error) => {
+            console.error("Error adding document:", error);
+        });
+    db.collection('films').add({
         id:       getUUID(),
         title:    'Blue Valentine',
         description:
@@ -450,8 +726,14 @@ function seedDatabase(firebase) {
         genre:    'romance',
         maturity: '15',
         slug:     'blue-valentine',
-    });
-    firebase.firestore().collection('films').add({
+    })
+        .then((docRef) => {
+            console.log("Document written with ID:", docRef.id, docRef.title);
+        })
+        .catch((error) => {
+            console.error("Error adding document:", error);
+        });
+    db.collection('films').add({
         id:       getUUID(),
         title:    'La La Land',
         description:
@@ -459,8 +741,14 @@ function seedDatabase(firebase) {
         genre:    'romance',
         maturity: '15',
         slug:     'la-la-land',
-    });
-    firebase.firestore().collection('films').add({
+    })
+        .then((docRef) => {
+            console.log("Document written with ID:", docRef.id, docRef.title);
+        })
+        .catch((error) => {
+            console.error("Error adding document:", error);
+        });
+    db.collection('films').add({
         id:       getUUID(),
         title:    'The Notebook',
         description:
@@ -468,8 +756,14 @@ function seedDatabase(firebase) {
         genre:    'romance',
         maturity: '15',
         slug:     'the-notebook',
-    });
-    firebase.firestore().collection('films').add({
+    })
+        .then((docRef) => {
+            console.log("Document written with ID:", docRef.id, docRef.title);
+        })
+        .catch((error) => {
+            console.error("Error adding document:", error);
+        });
+    db.collection('films').add({
         id:       getUUID(),
         title:    'Titanic',
         description:
@@ -477,7 +771,11 @@ function seedDatabase(firebase) {
         genre:    'romance',
         maturity: '15',
         slug:     'titanic',
-    });
+    })
+        .then((docRef) => {
+            console.log("Document written with ID:", docRef.id, docRef.title);
+        })
+        .catch((error) => {
+            console.error("Error adding document:", error);
+        });
 }
-
-export default seedDatabase;
