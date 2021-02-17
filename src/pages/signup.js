@@ -23,19 +23,18 @@ export default function Signup() {
         firebase
             .auth()
             .createUserWithEmailAndPassword(emailAddress, password)
-            .then((result) => result.user
-                .updateProfile({
-                    displayName: name,
-                    photoURL:    Math.floor(Math.random() * 5) + 1,
-
-                })
-                .then(() => {
-                    setEmailAddress('');
-                    setPassword('');
-                    setError('');
-                    history.push(routerPaths.browse);
-                })
-            ).catch((error) => setError(error.message));
+            .then((result) =>
+                result.user.updateProfile({
+                        displayName: name,
+                        photoURL:    Math.floor(Math.random() * 5) + 1
+                    }
+                ).then(() => history.push(routerPaths.browse))
+            )
+            .catch((error) => {
+                setEmailAddress("");
+                setPassword("");
+                setError(error.message)
+            });
     };
 
     return (

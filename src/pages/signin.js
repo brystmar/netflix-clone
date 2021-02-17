@@ -20,13 +20,12 @@ export default function Signin() {
         firebase
             .auth()
             .signInWithEmailAndPassword(emailAddress, password)
-            .then(() => {
-                setEmailAddress('');
-                setPassword('');
-                setError('');
-                history.push(routerPaths.browse);
-            })
-            .catch((error) => setError(error.message));
+            .then(() => history.push(routerPaths.browse))
+            .catch((error) => {
+                setEmailAddress("");
+                setPassword("");
+                setError(error.message)
+            });
     }
 
     return (
