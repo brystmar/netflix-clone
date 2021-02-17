@@ -2,13 +2,13 @@ import React from "react"
 import ReactDOM from "react-dom"
 import "./normalize.css"
 import { GlobalStyles } from "./global-styles"
-import App from "./App"
+import { FirebaseContext } from "./context/firebase"
+import { firebaseConfig } from "./constants/firebaseConfig"
 import firebase from "firebase/app"
 import "firebase/analytics"
 import "firebase/auth"
 import "firebase/firestore"
-import { FirebaseContext } from "./context/firebase"
-import { firebaseConfig } from "./constants/firebaseConfig"
+import App from "./App"
 
 // Initialize Firebase using our config
 firebase.initializeApp(firebaseConfig);

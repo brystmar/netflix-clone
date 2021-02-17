@@ -6,7 +6,7 @@ import { FooterContainer } from './footer'
 import { routerPaths } from "../constants/routerPaths"
 
 export function BrowseContainer({ slides }) {
-    const [ category, setCategory ] = useState('series');
+    const [ category, setCategory ] = useState('tv');
     const [ profile, setProfile ] = useState({});
     const [ isLoading, setIsLoading ] = useState(true);
     const [ searchTerm, setSearchTerm ] = useState('');
@@ -41,16 +41,16 @@ export function BrowseContainer({ slides }) {
                             alt="React-Flix"
                         />
                         <Header.Link
-                            active={category === 'series' ? 'true' : 'false'}
-                            onClick={() => setCategory('series')}
+                            active={category === 'tv' ? 'true' : 'false'}
+                            onClick={() => setCategory('tv')}
                         >
-                            Series
+                            TV
                         </Header.Link>
                         <Header.Link
-                            active={category === 'films' ? 'true' : 'false'}
-                            onClick={() => setCategory('films')}
+                            active={category === 'movies' ? 'true' : 'false'}
+                            onClick={() => setCategory('movies')}
                         >
-                            Films
+                            Movies
                         </Header.Link>
                     </Header.Group>
                     <Header.Group>
@@ -95,12 +95,15 @@ export function BrowseContainer({ slides }) {
                                         src={`/images/${category}/${item.genre}/${item.slug}/small.jpg`}
                                     />
                                     <Card.Meta>
-                                        <Card.SubTitle>{item.title}</Card.SubTitle>
+                                        <Card.Subtitle>{item.title}</Card.Subtitle>
                                         <Card.Text>{item.description}</Card.Text>
                                     </Card.Meta>
                                 </Card.Item>
                             ))}
                         </Card.Entities>
+                        <Card.Feature category={category}>
+                            <Card.FeatureText>{slideItem.description}</Card.FeatureText>
+                        </Card.Feature>
                     </Card>
                 ))}
             </Card.Group>
