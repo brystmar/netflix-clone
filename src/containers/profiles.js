@@ -3,6 +3,8 @@ import { Header, Profiles } from "../components"
 import { routerPaths } from "../constants/routerPaths"
 
 export function SelectProfileContainer(props) {
+
+
     return (
         <>
             <Header bg={false}>
@@ -17,15 +19,18 @@ export function SelectProfileContainer(props) {
             <Profiles>
                 <Profiles.Title>Who's watching?</Profiles.Title>
                 <Profiles.List>
-                    <Profiles.User
-                        onClick={() => props.setProfile({
-                            displayName: props.user.displayName,
-                            photoURL:    props.user.photoURL
-                        })}
-                    >
-                        <Profiles.Picture src={props.user.photoURL} />
-                        <Profiles.Name>{props.user.displayName}</Profiles.Name>
-                    </Profiles.User>
+                    {props.userList.map((user, index) =>
+                        <Profiles.User
+                            onClick={() => props.setProfile({
+                                displayName: user.displayName,
+                                photoURL:    user.photoURL
+                            })}
+                            key={index}
+                        >
+                            <Profiles.Picture src={user.photoURL} />
+                            <Profiles.Name>{user.displayName}</Profiles.Name>
+                        </Profiles.User>
+                    )}
                 </Profiles.List>
             </Profiles>
         </>
@@ -35,6 +40,6 @@ export function SelectProfileContainer(props) {
 SelectProfileContainer.defaultProps = {
     user: {
         displayName: "",
-        photoURL:    ""
+        photoURL:    "2"
     }
 }

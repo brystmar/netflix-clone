@@ -15,16 +15,29 @@ export function BrowseContainer({ slides }) {
 
     const { firebase } = useContext(FirebaseContext);
 
-    const user = {
-        displayName: "tberg",
-        photoURL:    "1"
+    const currentUser = firebase.auth().currentUser;
+
+    // TODO: Allow users to create profiles for their account
+    // Static list of profiles within each account
+    let userList = [];
+    const numProfilesPerAccount = 4;
+
+    if (currentUser) {
+        console.log("User email:", currentUser.email);
+
+        for (let i = 1; i <= numProfilesPerAccount; i++) {
+            userList.push({
+                displayName: currentUser.email.split("@")[0] + i,
+                photoURL:    i
+            })
+        }
     }
 
     useEffect(() => {
         setTimeout(() => {
             setIsLoading(false)
         }, 3000);
-    }, [ user ])
+    }, [ currentUser ])
 
     useEffect(() => {
         setSlideRows(slides[category]);
@@ -40,11 +53,11 @@ export function BrowseContainer({ slides }) {
         } else {
             setSlideRows(slides[category]);
         }
-    }, [ searchTerm ])
+    }, [ searchTerm, slides, slideRows, category ])
 
     return profile.displayName ? (
         <>
-            {isLoading ? <Loading src={user.photoURL} /> : <Loading.ReleaseBody />}
+            {isLoading ? <Loading src={profile.photoURL} /> : <Loading.ReleaseBody />}
             <Header src="joker" dontShowOnSmallViewPort>
                 <Header.Frame>
                     <Header.Group>
@@ -69,11 +82,11 @@ export function BrowseContainer({ slides }) {
                     <Header.Group>
                         <Header.Search searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
                         <Header.Profile>
-                            <Header.Picture src={user.photoURL} />
+                            <Header.Picture src={profile.photoURL} />
                             <Header.Dropdown>
                                 <Header.Group>
-                                    <Header.Picture src={user.photoURL} />
-                                    <Header.Link>{user.displayName}</Header.Link>
+                                    <Header.Picture src={profile.photoURL} />
+                                    <Header.Link>{profile.displayName}</Header.Link>
                                 </Header.Group>
                                 <Header.Group>
                                     <Header.Link onClick={() => firebase.auth().signOut()}>
@@ -128,5 +141,5 @@ export function BrowseContainer({ slides }) {
 
             <FooterContainer />
         </>
-    ) : (<SelectProfileContainer user={user} setProfile={setProfile} />)
+    ) : (<SelectProfileContainer userList={userList} setProfile={setProfile} />)
 }
